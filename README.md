@@ -1,0 +1,5 @@
+# Useful-code-snippets
+
+$(function () {
+      
+    });
