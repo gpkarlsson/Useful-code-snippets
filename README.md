@@ -17,3 +17,20 @@ $(function () {
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
+
+
+let container = null;
+
+// We want to render our React tree to a DOM element that is attached so that we can watch events
+beforeEach(() => {
+  // Setup a DOM element as the target
+  container = document.createElement('div');
+  document.body.appendChild(container);
+});
+
+afterEach(() => {
+  // Cleanup on exiting to prevent this test from altering the results of future tests
+  unmountComponentAtNode(container);
+  container.remove();
+  container = null;
+});
